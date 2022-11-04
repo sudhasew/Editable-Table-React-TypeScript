@@ -107,23 +107,18 @@ function App() {
   const handleEditFormChange = (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
 
-    console.log("inside");
-
     const newFormData = {
       ...editFormData,
       ...{ [event.target.name]: event.target.value },
     };
-    console.log("newFormData", newFormData);
 
     setEditFormData(newFormData);
   };
 
   const handleEditClick = (event: FormEvent, contact: Contact) => {
     event.preventDefault();
-    console.log("contact is ", contact);
-    setEditContactId(contact.id);
 
-    console.log("editFormData ", contact.fullName);
+    setEditContactId(contact.id);
 
     const formValues = {
       fullName: contact.fullName,
@@ -133,7 +128,6 @@ function App() {
     };
 
     setEditFormData(formValues);
-    console.log("formValues here", formValues);
   };
 
   const handleCancelClick = () => {

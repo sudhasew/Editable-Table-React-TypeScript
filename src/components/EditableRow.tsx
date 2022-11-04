@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+
 import "./styles.css";
 
 interface Props {
@@ -16,10 +17,9 @@ const EditableRow = ({
   editFormData,
   handleEditFormChange,
 }: Props) => {
-  console.log("editFormData", editFormData.fullName);
   return (
     <tr>
-      <td>
+      <td className={editFormData ? "changed" : ""}>
         <input
           className="input"
           required
@@ -30,7 +30,7 @@ const EditableRow = ({
           onChange={handleEditFormChange}
         ></input>
       </td>
-      <td>
+      <td className={editFormData ? "changed" : ""}>
         <input
           className="input"
           required
@@ -42,7 +42,7 @@ const EditableRow = ({
         ></input>
       </td>
 
-      <td>
+      <td className={editFormData ? "changed" : ""}>
         <input
           className="input"
           required
@@ -54,7 +54,7 @@ const EditableRow = ({
         ></input>
       </td>
 
-      <td>
+      <td className={editFormData ? "changed" : ""}>
         <input
           className="input"
           required
