@@ -11,6 +11,7 @@ th,
 td {
   padding: 5px 7px;
   width: 20%;
+  border: 1px solid black;
 }
 
 th {
@@ -43,8 +44,16 @@ button {
   margin-left: 10px;
   font-size: 1.2rem;
   cursor: pointer;
+  width: 100px;
 }
 
 td.changed {
-  background-color: red;
+  background-color: rgb(91, 188, 249);
+}
+
+.noContacts {
+  border: none;
+  background: none;
+  font-size: 2rem;
+  text-align: center;
 }

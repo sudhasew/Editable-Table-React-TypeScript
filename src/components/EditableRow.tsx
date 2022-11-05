@@ -19,7 +19,7 @@ const EditableRow = ({
 }: Props) => {
   return (
     <tr>
-      <td className={editFormData ? "changed" : ""}>
+      <td className={editFormData.fullName ? "changed" : ""}>
         <input
           className="input"
           required
@@ -30,7 +30,7 @@ const EditableRow = ({
           onChange={handleEditFormChange}
         ></input>
       </td>
-      <td className={editFormData ? "changed" : ""}>
+      <td className={editFormData.address ? "changed" : ""}>
         <input
           className="input"
           required
@@ -42,7 +42,7 @@ const EditableRow = ({
         ></input>
       </td>
 
-      <td className={editFormData ? "changed" : ""}>
+      <td className={editFormData.phoneNumber ? "changed" : ""}>
         <input
           className="input"
           required
@@ -54,7 +54,7 @@ const EditableRow = ({
         ></input>
       </td>
 
-      <td className={editFormData ? "changed" : ""}>
+      <td className={editFormData.email ? "changed" : ""}>
         <input
           className="input"
           required

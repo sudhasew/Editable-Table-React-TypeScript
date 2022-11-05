@@ -148,23 +148,29 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {contacts.map((contact) => (
-              <Fragment key={contact.id}>
-                {editContactId === contact.id ? (
-                  <EditableRow
-                    editFormData={editFormData}
-                    handleEditFormChange={handleEditFormChange}
-                    handleCancelClick={handleCancelClick}
-                  />
-                ) : (
-                  <ReadOnlyRow
-                    contact={contact}
-                    handleEditClick={handleEditClick}
-                    handleDeleteClick={handleDeleteClick}
-                  />
-                )}
-              </Fragment>
-            ))}
+            {contacts.length > 0 ? (
+              contacts.map((contact) => (
+                <Fragment key={contact.id}>
+                  {editContactId === contact.id ? (
+                    <EditableRow
+                      editFormData={editFormData}
+                      handleEditFormChange={handleEditFormChange}
+                      handleCancelClick={handleCancelClick}
+                    />
+                  ) : (
+                    <ReadOnlyRow
+                      contact={contact}
+                      handleEditClick={handleEditClick}
+                      handleDeleteClick={handleDeleteClick}
+                    />
+                  )}
+                </Fragment>
+              ))
+            ) : (
+              <tr>
+                <td className="noContacts">No Contacts Left</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </form>
@@ -207,7 +213,11 @@ function App() {
           value={emailAddr}
           onChange={(e) => setEmailAddr(e.target.value)}
         />
-        <button onClick={handleAddContact} type="submit">
+        <button
+          style={{ width: "150px" }}
+          onClick={handleAddContact}
+          type="submit"
+        >
           Add Contact
         </button>
       </form>
